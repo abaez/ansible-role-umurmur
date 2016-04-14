@@ -3,3 +3,18 @@
 mm:
   max: 10
   password: "welcome"
+
+dir:
+  tmp: /tmp
+  srv: /srv
+  tool: /opt
+
+
+user:
+  name: nm
+
+vhosts:
+  murmur:
+    name: domain.name
+    port: domain port
+
