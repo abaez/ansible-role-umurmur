@@ -3,12 +3,12 @@ Role Name
 [![license][2i]][2p]
 [![twitter][3i]][3p]
 
-A brief description of the role goes here.
+A umurmur role using docker.
 
 Description
 -----------
 
-Give a description
+The role provisions a umurmur docker container for you to use with [abaez.domain][4]. The combination of using ansible for the provision, allows for extremely easy domain association and setup of a murmur server.
 
 Role Variables
 --------------
