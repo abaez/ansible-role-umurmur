@@ -13,7 +13,27 @@ The role provisions a umurmur docker container for you to use with [abaez.domain
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The role has a number of variables, in `vars/main.yml`, that should be changed.
+
+### Required
+Must change these variable to get what you need from the role:
+
+``` rust
+mm.max: int // max users
+mm.password: string // password for the server
+user.name: string // name of the user
+dir.srv: path // the server install
+dir.tool: path // tool install location
+```
+
+### Optional
+If you have [abaez.domain][4], then change the **vhosts.murmur** variables:
+
+``` rust
+vhosts.murmur.name: url // domain location
+vhosts.murmur.port: int // port of the container to expose to domain location
+```
+
 
 Requirements
 ------------
@@ -26,13 +46,13 @@ For the role to function, you do need to have docker install. With it, you can o
 Usage
 -----
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+You need the roles listed in requirements for the role to run. That and you need to adjust variables according to role variables
 
 ``` yaml
 - hosts: servers
     roles:
-        - [abaez.docker][5]
-        - [abaez.domain][4]
+        - abaez.docker
+        - abaez.domain # optional
         - umurmur
 ```
 
