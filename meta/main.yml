@@ -50,6 +50,7 @@ galaxy_info:
     - murmur
     - umurmur
     - voip
+    - systemd
 
 dependencies:
   - abaez.docker

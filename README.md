@@ -8,7 +8,7 @@ A umurmur role using docker.
 Description
 -----------
 
-The role provisions a umurmur docker container for you to use with [abaez.domain][4]. The combination of using ansible for the provision, allows for extremely easy domain association and setup of a murmur server.
+The role provisions a umurmur docker container for you to use with [abaez.domain][4] and is serviced by systemd. The combination of all of these, allows for extremely easy domain association and setup of a murmur server.
 
 Role Variables
 --------------
@@ -21,7 +21,7 @@ Must change these variable to get what you need from the role:
 ``` rust
 mm.max: int // max users
 mm.password: string // password for the server
-user.name: string // name of the user
+user.name: string // name of the user to run the systemd service
 dir.srv: path // the server install
 dir.tool: path // tool install location
 ```
