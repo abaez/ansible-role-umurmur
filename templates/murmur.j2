@@ -1,0 +1,21 @@
+[Unit]
+Description=murmur server container
+Requires=domains.service
+After=domains.service
+
+[Service]
+User={{ user.name }}
+Restart=on-failure
+RestartSec=10
+ExecStartPre=-/usr/bin/docker kill murmur
+ExecStartPre=-/usr/bin/docker rm murmur
+ExecStart=/usr/bin/docker run \
+  -v {{ dir.srv }}/murmur:/etc/umurmur \
+  -v {{ dir.tool }}/umurmur.conf:/etc/umurmur.conf \
+  -p 64738:64738/udp -p 64738:64738 \
+  -e VIRTUAL_HOST={{ vhost.name }} -e VIRTUAL_PORT={{ vhost.port }} \
+  --name=murmur xdrum/umurmur
+ExecStop=-/usr/bin/docker stop -t 2 murmur
+
+[Install]
+WantedBy=multi-user.target

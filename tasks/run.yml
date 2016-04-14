@@ -1,0 +1,11 @@
+---
+- name: run murmur container
+  docker:
+    image: xdrum/umurmur
+    pull: always
+    state: reloaded
+    ports:
+    - "64738:64738"
+    volumes:
+    - "{{ dir.srv }}/murmur":/etc/umurmur
+    - "{{ dir.tool }}/umurmur.conf":/etc/umurmur.conf

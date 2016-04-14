@@ -1,2 +1,5 @@
 ---
-# vars file for template
+
+mm:
+  max: 10
+  password: "welcome"

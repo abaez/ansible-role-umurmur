@@ -1,2 +1,27 @@
 ---
-# tasks file for template
+- name: make murmur directory
+  file:
+    name="{{ dir.srv }}/murmur"
+    owner="{{ user.name }}"
+    state=directory
+
+- name: add conf file
+  template:
+    owner="{{ user.name }}"
+    src="umurmur.conf.j2"
+    dest="{{ dir.tool }}/umurmur.conf"
+
+- name: add unit file
+  template:
+    owner="{{ user.name }}"
+    src="murmur.j2"
+    dest="/usr/lib/systemd/system/murmur.service"
+  vars:
+    vhost: "{{ vhosts.murmur }}"
+
+- name: load the service
+  service:
+    name=murmur
+    enabled=yes
+    state=reloaded
+
