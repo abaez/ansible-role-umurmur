@@ -18,7 +18,10 @@ A description of the settable variables for this role should go here, including 
 Requirements
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+For the role to function, you do need to have docker install. With it, you can optionally add domain role to have domain association for the role.
+
+* [abaez.docker][5]
+* (optional) [abaez.domain][4]
 
 Usage
 -----
@@ -28,7 +31,9 @@ Including an example of how to use your role (for instance, with variables passe
 ``` yaml
 - hosts: servers
     roles:
-        - { role: username.rolename, x: 42 }
+        - [abaez.docker][5]
+        - [abaez.domain][4]
+        - umurmur
 ```
 
 Author Information
@@ -41,3 +46,5 @@ Author Information
 [2p]: ./LICENSE
 [3i]: https://img.shields.io/badge/twitter-a_baez-blue.svg
 [3p]: https://twitter.com/a_baez
+[4]: https://galaxy.ansible.com/abaez/domain
+[5]: https://galaxy.ansible.com/abaez/docker
