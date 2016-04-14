@@ -155,3 +155,4 @@ galaxy_info:
 
 dependencies:
   - abaez.docker
+  - abaez.domain
