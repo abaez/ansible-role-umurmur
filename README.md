@@ -13,7 +13,7 @@ The role provisions a umurmur docker container for you to use with [abaez.domain
 Role Variables
 --------------
 
-The role has a number of variables, in `vars/main.yml`, that should be changed.
+The role has a number of variables, in `defaults/main.yml`, that should be changed.
 
 ### Required
 Must change these variable to get what you need from the role:
